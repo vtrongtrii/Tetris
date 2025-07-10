@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ProjectGame\\Tetris\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\RuntimeTetrominoEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Tetromino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MaterialReferenceManager.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
+              "ViewState": "AgIAAPYBAAAAAAAAAAAjwAwCAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T04:42:55.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RuntimeTetrominoEditor.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RuntimeTetrominoEditor.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RuntimeTetrominoEditor.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T02:18:43.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ghost.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ghost.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ghost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T01:36:01.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Piece.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Piece.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Piece.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T02:10:08.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tetromino.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tetromino.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tetromino.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T02:03:12.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Data.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAIwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T01:51:20.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Board.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Board.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Board.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwDwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T01:44:08.141Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
