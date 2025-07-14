@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class Board : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class Board : MonoBehaviour
     public TetrominoData[] tetrominoes;
     public Vector3Int spawnPosition;
     public Vector2Int boardSize = new Vector2Int(10, 20);
+    public TMP_Text scoreText;
+    public int lineClear = 0;
+    public int total_point = 0;
 
     public RectInt Bounds
     {
@@ -139,8 +144,10 @@ public class Board : MonoBehaviour
         {
             Vector3Int position = new Vector3Int(col, row, 0);
             this.tilemap.SetTile(position, null);
+          
         }
-
+        lineClear++;
+        CountPoints(lineClear);
         // Dồn các dòng trên xuống
         for (int y = row; y < bounds.yMax - 1; y++)
         {
@@ -158,6 +165,22 @@ public class Board : MonoBehaviour
         {
             Vector3Int position = new Vector3Int(col, bounds.yMax - 1, 0);
             this.tilemap.SetTile(position, null);
+        }
+    }
+
+    private void CountPoints(int lines)
+    {
+        int point = 100;
+        total_point = lines * point;
+
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + total_point.ToString();
+        }
+
+        if (total_point >= 1000) // hoặc mức bạn muốn kết thúc game
+        {
+            GameOver();
         }
     }
 }
