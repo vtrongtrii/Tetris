@@ -1,26 +1,29 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Tilemaps;
+
 public enum Tetromino
 {
-    I, // Straight line
-    J, // J shape
-    L, // L shape
-    O, // Square
-    S, // S shape
-    T, // T shape
-    Z  // Z shape
+    I,
+    J,
+    L,
+    O,
+    S,
+    T,
+    Z
 }
+
 [System.Serializable]
-public struct TetrominoData
+public class TetrominoData // Đảm bảo đây là 'class'
 {
     public Tetromino tetromino;
     public Tile tile;
     public Vector2Int[] cells { get; private set; }
     public Vector2Int[,] wallKicks { get; private set; }
 
-    public void Initalize()
+    // Sửa lỗi chính tả từ Initalize thành Initialize
+    public void Initialize() // <--- ĐÃ SỬA TẠI ĐÂY!
     {
         this.cells = Data.Cells[this.tetromino];
         this.wallKicks = Data.WallKicks[this.tetromino];
     }
-}   
+}

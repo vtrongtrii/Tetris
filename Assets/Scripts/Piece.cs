@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections; // Cần dùng System.Collections cho IEnumerator
 
 public class Piece : MonoBehaviour
 {
@@ -28,18 +29,22 @@ public class Piece : MonoBehaviour
     private float stepTime;
     private float lockTime;
 
+    // Tốc độ rơi (thêm để tương thích với NextLevel)
+    public float fallSpeed = 1f;
+
     // Hàm gọi khi khối mới spawn
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
-        this.hasChanged = false; // reset quyền đổi khối
+        this.hasChanged = false;
         this.board = board;
         this.position = position;
         this.data = data;
         this.rotationIndex = 0;
         this.stepTime = Time.time + this.stepDelay;
         this.lockTime = 0f;
+        this.fallSpeed = 1f; // Tốc độ rơi ban đầu (sẽ được cập nhật theo level từ Board)
 
-        if (this.cells == null)
+        if (this.cells == null || this.cells.Length != data.cells.Length) // Đảm bảo mảng cells được khởi tạo lại nếu kích thước thay đổi
         {
             this.cells = new Vector3Int[data.cells.Length];
         }
@@ -52,11 +57,17 @@ public class Piece : MonoBehaviour
 
     private void Update()
     {
-        this.board.Clear(this); // xóa khối khỏi tilemap để update
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) // <--- ĐÃ THÊM: Kiểm tra trạng thái isGameOver từ Board
+        {
+            return;
+        }
+
+        board.Clear(this);
 
         this.lockTime += Time.deltaTime;
 
-        // 🔁 Xử lý input điều khiển
+        // Xử lý input điều khiển
         if (Input.GetKeyDown(KeyCode.Q)) Rotate(-1);
         if (Input.GetKeyDown(KeyCode.E)) Rotate(1);
         if (Input.GetKeyDown(KeyCode.A)) Move(Vector2Int.left);
@@ -65,89 +76,107 @@ public class Piece : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) HardDrop();
 
         // Rơi tự động theo thời gian
+        // Điều chỉnh stepDelay dựa trên fallSpeed (tốc độ rơi)
         if (Time.time >= this.stepTime) Step();
 
-        // Nhấn F để đổi khối (1 lần duy nhất)  
+        // Đổi khối bằng phím F (1 lần duy nhất)
         if (Input.GetKeyDown(KeyCode.F) && !hasChanged)
         {
             ChangeToRandomTetromino();
             hasChanged = true;
         }
 
-
-        /*if (Input.GetKeyDown(KeyCode.C))
+        // Bật/tắt Runtime Tetromino Editor UI (nếu có)
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (runtimeUI == null)
+            var editor = FindObjectOfType<RuntimeTetrominoEditor>();
+            if (editor != null)
             {
-                ShowRuntimeUI();
+                editor.ToggleRuntimeUI();
             }
-            else
-            {
-                Destroy(runtimeUI);
-            }
-        }*/
+        }
 
-        this.board.Set(this); // vẽ lại khối
+        board.Set(this);
     }
 
-    // Rơi từng bước
     private void Step()
     {
-        this.stepTime = Time.time + this.stepDelay;
-        Move(Vector2Int.down);
+        // Điều chỉnh tốc độ rơi theo fallSpeed của Piece
+        this.stepTime = Time.time + this.stepDelay / this.fallSpeed;
 
-        // Nếu đã chạm đáy hoặc khối khác
-        if (this.lockTime >= this.lockDelay)
+        // Cố gắng di chuyển xuống. Nếu không thể di chuyển, bắt đầu khóa.
+        if (!Move(Vector2Int.down))
         {
-            Lock();
+            if (this.lockTime >= this.lockDelay)
+            {
+                Lock();
+            }
+        }
+        else
+        {
+            // Nếu di chuyển được, reset lockTime
+            this.lockTime = 0f;
         }
     }
 
-    // Rơi hết mức
     private void HardDrop()
     {
-        while (Move(Vector2Int.down)) continue;
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
+
+        while (Move(Vector2Int.down)) continue; // Di chuyển xuống cho đến khi không thể nữa
+        Lock(); // Khóa khối ngay lập tức
     }
 
-    //Khóa khối, kiểm tra dòng và spawn khối mới
     private void Lock()
     {
-        this.board.Set(this);
-        this.board.ClearLines();
-        this.board.SpawnPiece();
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
+
+        board.Set(this); // Đặt khối vào Tilemap
+        board.ClearLines(); // Xóa các dòng đầy
+        board.SpawnPiece(); // Tạo khối mới
     }
 
-    // Di chuyển khối, kiểm tra hợp lệ
     private bool Move(Vector2Int translation)
     {
         Vector3Int newPosition = this.position + new Vector3Int(translation.x, translation.y, 0);
 
-        bool valid = this.board.IsValidPosition(this, newPosition);
-        if (valid)
+        if (board != null)
         {
-            this.position = newPosition;
-            this.lockTime = 0f;
+            bool valid = board.IsValidPosition(this, newPosition);
+            if (valid)
+            {
+                this.position = newPosition;
+                this.lockTime = 0f; // Đặt lại thời gian khóa khi di chuyển hợp lệ
+            }
+            return valid;
         }
-        return valid;
+        return false;
     }
 
-    // Xoay khối trái/phải
     private void Rotate(int direction)
     {
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
+
         int originalRotation = this.rotationIndex;
         this.rotationIndex = Wrap(this.rotationIndex + direction, 0, 4);
 
         ApplyRotationMatrix(direction);
 
-        // Thử wall kick nếu xoay không hợp lệ
-        if (!TestWallKicks(this.rotationIndex, direction))
+        if (board != null && !TestWallKicks(this.rotationIndex, direction))
         {
+            // Nếu không tìm được vị trí hợp lệ sau khi xoay và kick, quay lại trạng thái ban đầu
             this.rotationIndex = originalRotation;
-            ApplyRotationMatrix(-direction);
+            ApplyRotationMatrix(-direction); // Xoay ngược lại để khôi phục cells
+        }
+        else
+        {
+            this.lockTime = 0f; // Reset lockTime nếu xoay thành công
         }
     }
 
-    // Áp dụng ma trận xoay cho từng cell
     private void ApplyRotationMatrix(int direction)
     {
         for (int i = 0; i < this.cells.Length; i++)
@@ -159,7 +188,7 @@ public class Piece : MonoBehaviour
             {
                 case Tetromino.I:
                 case Tetromino.O:
-                    // xoay chính giữa với I/O
+                    // Tetromino I và O xoay quanh tâm 0.5, 0.5
                     cell.x -= 0.5f;
                     cell.y -= 0.5f;
                     x = Mathf.CeilToInt(cell.x * Data.RotationMatrix[0] * direction + cell.y * Data.RotationMatrix[1] * direction);
@@ -167,6 +196,7 @@ public class Piece : MonoBehaviour
                     break;
 
                 default:
+                    // Các tetromino khác xoay quanh tâm 0, 0
                     x = Mathf.RoundToInt(cell.x * Data.RotationMatrix[0] * direction + cell.y * Data.RotationMatrix[1] * direction);
                     y = Mathf.RoundToInt(cell.x * Data.RotationMatrix[2] * direction + cell.y * Data.RotationMatrix[3] * direction);
                     break;
@@ -176,51 +206,97 @@ public class Piece : MonoBehaviour
         }
     }
 
-    // Thử wall kick sau xoay
     private bool TestWallKicks(int rotationIndex, int rotationDirection)
     {
-        int wallKickIndex = GetWallKickIndex(rotationIndex, rotationDirection);
-
-        for (int i = 0; i < this.data.wallKicks.GetLength(1); i++)
+        if (board != null)
         {
-            Vector2Int translation = this.data.wallKicks[wallKickIndex, i];
-            if (Move(translation)) return true;
+            int wallKickIndex = GetWallKickIndex(rotationIndex, rotationDirection);
+
+            // Duyệt qua các điểm offset trong bảng Wall Kicks
+            for (int i = 0; i < this.data.wallKicks.GetLength(1); i++)
+            {
+                Vector2Int translation = this.data.wallKicks[wallKickIndex, i];
+                if (Move(translation))
+                {
+                    return true; // Nếu tìm được vị trí hợp lệ, trả về true
+                }
+            }
         }
-        return false;
+        return false; // Không tìm được vị trí hợp lệ sau khi thử tất cả wall kicks
     }
 
     private int GetWallKickIndex(int rotationIndex, int rotationDirection)
     {
+        // Chuyển đổi chỉ số quay và hướng quay thành chỉ số trong mảng wallKicks
         int wallKickIndex = rotationIndex * 2;
-        if (rotationDirection < 0) wallKickIndex -= 1;
+        if (rotationDirection < 0) // Nếu quay ngược chiều kim đồng hồ
+        {
+            wallKickIndex -= 1;
+        }
+        // Đảm bảo chỉ số nằm trong phạm vi của mảng wallKicks
         return Wrap(wallKickIndex, 0, this.data.wallKicks.GetLength(0));
     }
 
-    // Đảm bảo rotation nằm trong khoảng
     private int Wrap(int input, int min, int max)
     {
+        // Hàm bao bọc giá trị để đảm bảo nằm trong min-max
         return (input - min + (max - min)) % (max - min) + min;
     }
 
-    // Áp dụng lại shape từ Data.Cells
-    /*public void ApplyNewShape()
+    public void ApplyNewShape(Tetromino newType)
     {
-        this.data.Initalize();
-        if (this.cells.Length != data.cells.Length)
-            this.cells = new Vector3Int[data.cells.Length];
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
 
-        for (int i = 0; i < data.cells.Length; i++)
-            this.cells[i] = (Vector3Int)data.cells[i];
-    }*/
+        if (board != null)
+        {
+            this.data = board.tetrominoes[(int)newType];
+            this.data.Initialize(); // Sửa lỗi chính tả: Initalize -> Initialize
 
-    // Gây hiệu ứng khi đổi khối
+            if (this.cells == null || this.cells.Length != data.cells.Length)
+            {
+                this.cells = new Vector3Int[data.cells.Length];
+            }
+
+            for (int i = 0; i < data.cells.Length; i++)
+            {
+                this.cells[i] = (Vector3Int)data.cells[i];
+            }
+
+            this.rotationIndex = 0;
+        }
+    }
+
+    // Phương thức SetData (dành cho Runtime Editor)
+    public void SetData(Tetromino type, TetrominoData newData)
+    {
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
+
+        if (newData != null) // Đã sửa lỗi CS0019 bằng cách đảm bảo TetrominoData là class
+        {
+            newData.tetromino = type; // Đặt lại kiểu tetromino cho newData
+            this.data = newData;
+            this.rotationIndex = 0;
+
+            // Đảm bảo cells được cập nhật theo newData
+            if (this.cells == null || this.cells.Length != data.cells.Length)
+                this.cells = new Vector3Int[data.cells.Length];
+
+            for (int i = 0; i < data.cells.Length; i++)
+            {
+                this.cells[i] = (Vector3Int)data.cells[i];
+            }
+        }
+    }
+
     public void AnimateTransformChange()
     {
         StopAllCoroutines();
         StartCoroutine(AnimateScale());
     }
 
-    private System.Collections.IEnumerator AnimateScale()
+    private IEnumerator AnimateScale()
     {
         Vector3 small = new Vector3(0.3f, 0.3f, 1f);
         Vector3 normal = Vector3.one;
@@ -234,33 +310,89 @@ public class Piece : MonoBehaviour
         transform.localScale = normal;
     }
 
-    // Đổi sang khối khác ngẫu nhiên (chỉ 1 lần)
     private void ChangeToRandomTetromino()
     {
-        Tetromino current = this.data.tetromino;
-        Tetromino newType;
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
 
-        do
+        if (board != null)
         {
-            newType = (Tetromino)Random.Range(0, System.Enum.GetValues(typeof(Tetromino)).Length);
-        } while (newType == current);
+            Tetromino current = this.data.tetromino;
+            Tetromino newType;
 
-        TetrominoData newData = board.tetrominoes[(int)newType];
-        newData.Initalize();
+            // Chọn một loại tetromino ngẫu nhiên khác với loại hiện tại
+            do
+            {
+                newType = (Tetromino)Random.Range(0, System.Enum.GetValues(typeof(Tetromino)).Length);
+            } while (newType == current);
 
-        board.Clear(this);
+            TetrominoData newData = board.tetrominoes[(int)newType];
+            if (newData != null) // Kiểm tra null an toàn (vì TetrominoData giờ là class)
+            {
+                newData.Initialize(); // Sửa lỗi chính tả: Initalize -> Initialize
 
-        this.data = newData;
-        this.rotationIndex = 0;
+                board.Clear(this); // Xóa khối cũ khỏi bảng
 
-        for (int i = 0; i < data.cells.Length; i++)
-        {
-            this.cells[i] = (Vector3Int)data.cells[i];
+                this.data = newData;
+                this.rotationIndex = 0;
+
+                // Cập nhật các ô của khối mới
+                if (this.cells == null || this.cells.Length != data.cells.Length)
+                {
+                    this.cells = new Vector3Int[data.cells.Length];
+                }
+                for (int i = 0; i < data.cells.Length; i++)
+                {
+                    this.cells[i] = (Vector3Int)data.cells[i];
+                }
+
+                board.Set(this); // Đặt khối mới vào bảng
+
+                AnimateTransformChange(); // Chạy animation
+            }
         }
-
-        board.Set(this);
-
-        AnimateTransformChange(); // 💥 Gọi hiệu ứng co giãn sau khi đổi
     }
 
+    // Phương thức để đổi sang một loại tetromino cụ thể (dành cho bên ngoài gọi)
+    public void ChangeToTetrominoType(Tetromino newType)
+    {
+        // Dừng mọi hoạt động nếu board không tồn tại hoặc game đã kết thúc
+        if (board == null || board.isGameOver) return;
+
+        if (board != null)
+        {
+            TetrominoData newData = board.tetrominoes[(int)newType];
+            if (newData != null) // Kiểm tra null an toàn
+            {
+                newData.Initialize(); // Sửa lỗi chính tả: Initalize -> Initialize
+
+                board.Clear(this);
+
+                this.data = newData;
+                this.rotationIndex = 0;
+
+                this.cells = new Vector3Int[data.cells.Length];
+                for (int i = 0; i < data.cells.Length; i++)
+                {
+                    this.cells[i] = (Vector3Int)data.cells[i];
+                }
+
+                board.Set(this);
+                AnimateTransformChange();
+                Debug.Log($"Khối đã đổi sang: {newType}");
+            }
+        }
+    }
+
+    public void Clear()
+    {
+        if (board != null)
+        {
+            board.Clear(this);
+        }
+        else
+        {
+            Debug.LogWarning("Board không được gán cho Piece khi gọi Clear!");
+        }
+    }
 }
