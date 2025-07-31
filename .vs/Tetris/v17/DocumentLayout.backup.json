@@ -3,129 +3,115 @@
   "WorkspaceRootPath": "D:\\ProjectGame\\Tetris\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Tetromino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\Challenge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ChallengeSystem\\Challenge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\RuntimeTetrominoEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Gameplay\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\CameraShake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Gameplay\\CameraShake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Gameplay\\Spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 134,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MaterialReferenceManager.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.textmeshpro@3.0.6\\Scripts\\Runtime\\MaterialReferenceManager.cs",
-              "ViewState": "AgIAAPYBAAAAAAAAAAAjwAwCAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T04:42:55.414Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RuntimeTetrominoEditor.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\RuntimeTetrominoEditor.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\RuntimeTetrominoEditor.cs",
-              "RelativeToolTip": "Assets\\Scripts\\RuntimeTetrominoEditor.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADYAAAAyAAAAAAAAAA==",
+              "Title": "Piece.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Piece.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gameplay\\Piece.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Piece.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gameplay\\Piece.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T02:18:43.954Z",
+              "WhenOpened": "2025-07-31T07:52:56.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Ghost.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Ghost.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Ghost.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Ghost.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAQAAAAAAAAAA==",
+              "Title": "Spawner.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Spawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gameplay\\Spawner.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\Spawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gameplay\\Spawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T01:36:01.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Piece.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Piece.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Piece.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Piece.cs",
-              "ViewState": "AgIAAGIBAAAAAAAAAAAAwI0BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T02:10:08.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Tetromino.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tetromino.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Tetromino.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tetromino.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T02:03:12.189Z",
+              "WhenOpened": "2025-07-31T07:52:29.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Data.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Data.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "Title": "ChallengeRuleManager.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ChallengeSystem\\ChallengeRuleManager.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T01:51:20.768Z"
+              "WhenOpened": "2025-07-31T07:47:41.174Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Board.cs",
-              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Board.cs",
-              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Board.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Board.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAAwAcBAAAFAAAAAAAAAA==",
+              "Title": "ChallengeRule.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ChallengeSystem\\ChallengeRule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T01:44:08.141Z",
+              "WhenOpened": "2025-07-31T07:47:35.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CameraShake.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\CameraShake.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gameplay\\CameraShake.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\Gameplay\\CameraShake.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gameplay\\CameraShake.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T07:39:56.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Challenge.cs",
+              "DocumentMoniker": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\Challenge.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ChallengeSystem\\Challenge.cs",
+              "ToolTip": "D:\\ProjectGame\\Tetris\\Assets\\Scripts\\ChallengeSystem\\Challenge.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ChallengeSystem\\Challenge.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T07:36:11.915Z",
               "EditorCaption": ""
             }
           ]
